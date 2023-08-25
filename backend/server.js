@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 
 // Express app
@@ -17,8 +18,18 @@ app.use( (req, res, next) => {
 // localhost:4000/api/workouts
 app.use('/api/workouts', workoutRoutes)
 
-// Listen for requests
-app.listen(process.env.PORT, () => {
-  console.log('listening on port 4000 on a Friday')
-})
+// Connect to database
+mongoose.connect(process.env.ATLAS_URI)
+  .then( () => {
+    // Listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log('Connected to MongoDB Atlas DB & listening on port 4000 on a Friday')
+    })
+  })
+  .catch( (error) => {
+    console.log(error)
+  })
+
+
+
 
