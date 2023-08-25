@@ -11,12 +11,12 @@ const getAllWorkouts = async (req, res) => {
   res.status(200).json(workouts)
 }
 
-
 // GET a single workout
 const getSingleWorkout = async (req, res) => {
+  // Grab the ID from the route parameter
   const {id} = req.params
 
-  // Error handling to make app not CRASH and shit the bed
+  // Error handling to make app not CRASH and shit the bed if ID is invalid
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({error: 'NO SUCH WORKOUT'})
   }
@@ -25,14 +25,13 @@ const getSingleWorkout = async (req, res) => {
   // res.status(200).json({"ken": "FUNNY"})
   const workout = await Workout.findById(id)
   
-  // Error handling
+  // Do we have a workout? Error handling
   if (!workout) {
     res.status(404).json({error: 'No such workout'})
   }
   // workout found
   res.status(200).json(workout)
 }
-
 
 // POST/CREATE a new workout
 const createWorkout = async (req, res) => {
@@ -52,12 +51,55 @@ const createWorkout = async (req, res) => {
 }
 
 // DELETE a workout
+const deleteWorkout = async (req, res) => {
+  // Grab the ID from the route parameter
+  const {id} = req.params
+
+  // Error handling to make app not CRASH and shit the bed if ID is invalid
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'NO SUCH WORKOUT'})
+  }
+
+  // In MongoDB, it's _id not id
+  const workout = await Workout.findOneAndDelete({_id: id})
+
+  // Do we have a workout? Error handling
+  if (!workout) {
+    res.status(404).json({error: "No such workout"})
+  }
+  
+  // Sending the workout we just deleted
+  res.status(200).json(workout)
+}
 
 // PATCH/UPDATE a workout
+const updateWorkout = async (req, res) => {
+  const {id} = req.params
 
+  // Error handling to make app not CRASH and shit the bed if ID is invalid
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'NO SUCH WORKOUT'})
+  }
+
+  // In MongoDB, it's _id not id
+  const workout = await Workout.findOneAndUpdate({_id: id}, {
+    ...req.body
+  }, {new: true})
+
+  // Do we have a workout? Error handling
+  if (!workout) {
+    res.status(404).json({error: "No such workout"})
+  }
+
+  // Sending the workout we just updated
+  res.status(200).json(workout)
+
+}
 
 module.exports = {
   createWorkout,
   getAllWorkouts,
-  getSingleWorkout
+  getSingleWorkout,
+  deleteWorkout,
+  updateWorkout
 }

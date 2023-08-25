@@ -30,7 +30,7 @@ app.use(express.json()) // attaches to the req object (e.g. req.body)
 
 - [x]  [Tutorial #6 Controllers Part 1](https://www.youtube.com/watch?v=oEHHjs1UVXQ&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=6)
 
-- []  [Tutorial #7 Controllers Part 2]()
+- []  [Tutorial #7 Controllers Part 2](https://www.youtube.com/watch?v=MwiyQsWSlc0&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=7)
 
 - []  [Tutorial #8]()
 

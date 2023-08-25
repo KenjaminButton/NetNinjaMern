@@ -2,7 +2,9 @@ const express = require('express')
 const {
   createWorkout,
   getAllWorkouts,
-  getSingleWorkout
+  getSingleWorkout,
+  deleteWorkout,
+  updateWorkout
 } = require('../controllers/workoutController')
 
 const Workout = require('../models/WorkoutModel')
@@ -24,15 +26,11 @@ router.get('/:id', getSingleWorkout)
 
 // DELETE a single workout
 // localhost:4000/api/workouts/:id
-router.delete('/:id', (req, res) => {
-  res.json({msg: 'DELETE a single workout'})
-})
+router.delete('/:id', deleteWorkout)
 
 // PATCH a single workout
 // localhost:4000/api/workouts/:id
-router.patch('/:id', (req, res) => {
-  res.json({msg: 'PATCH a single workout'})
-})
+router.patch('/:id', updateWorkout)
 
 // localhost:4000/api/workouts/hello
 router.get('/hello', (req, res) => {
