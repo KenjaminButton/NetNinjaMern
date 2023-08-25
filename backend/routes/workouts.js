@@ -1,7 +1,7 @@
 const express = require('express')
 const {
   createWorkout,
-  getWorkouts,
+  getAllWorkouts,
   getSingleWorkout
 } = require('../controllers/workoutController')
 
@@ -12,7 +12,7 @@ const router = express.Router()
 
 // GET all workouts
 // localhost:4000/api/workouts/
-router.get('/', getWorkouts)
+router.get('/', getAllWorkouts)
 
 // POST a new workout
 // localhost:4000/api/workouts/
