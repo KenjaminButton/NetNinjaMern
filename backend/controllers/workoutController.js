@@ -1,5 +1,6 @@
 // Writing a bunch of functions that we can reference inside routes/workouts.js
 const Workout = require('../models/WorkoutModel')
+const mongoose = require('mongoose')
 
 // GET all workouts
 const getWorkouts = async (req, res) => {
@@ -14,6 +15,12 @@ const getWorkouts = async (req, res) => {
 // GET a single workout
 const getSingleWorkout = async (req, res) => {
   const {id} = req.params
+
+  // Error handling to make app not CRASH and shit the bed
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'NO SUCH WORKOUT'})
+  }
+
   // console.log('this is the ID', id) 
   // res.status(200).json({"ken": "FUNNY"})
   const workout = await Workout.findById(id)
