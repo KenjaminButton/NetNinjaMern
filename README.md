@@ -28,7 +28,7 @@ app.use(express.json()) // attaches to the req object (e.g. req.body)
 
 - [x]  [Tutorial #5](https://www.youtube.com/watch?v=O8IipcpTmYU&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=5)
 
-- []  [Tutorial #6]()
+- [x]  [Tutorial #6 Controllers Part 1](https://www.youtube.com/watch?v=oEHHjs1UVXQ&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=6)
 
 - []  [Tutorial #7]()
 
