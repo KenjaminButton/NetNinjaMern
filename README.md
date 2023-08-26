@@ -42,6 +42,8 @@ npm create vite@latest
 
 - **Install** [react-router-dom](https://www.npmjs.com/package/react-router-dom):  creates multi-page-like experiences without actually having to reload the entire page when navigating between different views or components.
 
+Stopping Point: 05:30
+
 - []  [Tutorial #9]()
 
 - []  [Tutorial #10]()
