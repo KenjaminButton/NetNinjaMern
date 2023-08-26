@@ -30,9 +30,17 @@ app.use(express.json()) // attaches to the req object (e.g. req.body)
 
 - [x]  [Tutorial #6 Controllers Part 1](https://www.youtube.com/watch?v=oEHHjs1UVXQ&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=6)
 
-- []  [Tutorial #7 Controllers Part 2](https://www.youtube.com/watch?v=MwiyQsWSlc0&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=7)
+- [x]  [Tutorial #7 Controllers Part 2](https://www.youtube.com/watch?v=MwiyQsWSlc0&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=7)
 
-- []  [Tutorial #8]()
+- []  [Tutorial #8 Making a React App](https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8)
+
+- [YARN: How To Set Up a React Project with Vite](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite)
+  
+```shell
+npm create vite@latest
+```
+
+- **Install** [react-router-dom](https://www.npmjs.com/package/react-router-dom):  creates multi-page-like experiences without actually having to reload the entire page when navigating between different views or components.
 
 - []  [Tutorial #9]()
 
