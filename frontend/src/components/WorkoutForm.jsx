@@ -10,7 +10,17 @@ const WorkoutForm = () => {
   const [load, setLoad] = useState('') 
 
   return (
-    
+    <form className="create">
+      <h3>Add a new workout</h3>
+      <label>Exercise Title</label>
+      <input
+        type="text" 
+        placeholder="E.G. Video Games"
+        onChange={ (evt) => setTitle(evt.target.value)}
+        // Two-way binding approach
+        value={title}
+      />
+    </form>
   )
 }
 
