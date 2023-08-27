@@ -1,11 +1,14 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 
 // Express app
 const app = express()
+// https://expressjs.com/en/resources/middleware/cors.html
+app.use(cors())
 
 // Global Middleware
 app.use(express.json()) // attaches to the req object (e.g. req.body)

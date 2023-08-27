@@ -32,7 +32,7 @@ app.use(express.json()) // attaches to the req object (e.g. req.body)
 
 - [x]  [Tutorial #7 Controllers Part 2](https://www.youtube.com/watch?v=MwiyQsWSlc0&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=7)
 
-- []  [Tutorial #8 Making a React App](https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8)
+- [x]  [Tutorial #8 Making a React App](https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8)
 
 - [YARN: How To Set Up a React Project with Vite](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite)
   
@@ -42,9 +42,11 @@ npm create vite@latest
 
 - **Install** [react-router-dom](https://www.npmjs.com/package/react-router-dom):  creates multi-page-like experiences without actually having to reload the entire page when navigating between different views or components.
 
-Stopping Point: 05:30
+- [x]  [Tutorial #9 Fetching Data](https://www.youtube.com/watch?v=MEab_a19ZGk&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=9)
 
-- []  [Tutorial #9]()
+- Skip the PROXY step and just install [Express CORS Simple Usage (Enable All CORS Requests)](https://expressjs.com/en/resources/middleware/cors.html) for our backend folder. This should fix the issue for **development** and **production** (assuming *every* request points the direct endpoint).
+
+- 
 
 - []  [Tutorial #10]()
 
