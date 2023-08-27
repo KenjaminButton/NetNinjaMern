@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import WorkoutDetails from '../components/WorkoutDetails'
 
 const Home = () => {
   const [workouts, setWorkouts] = useState([])
@@ -25,8 +26,13 @@ const Home = () => {
       <div className='workouts'>
         
         {workouts && workouts.map( (workout) => (
-          <p key={workout._id}>{workout.title}</p>
+          // <p key={workout._id}>{workout.title}</p>
+
+          // Workout is assigned the entire workout object
+          <WorkoutDetails key={workout._id} workout={workout} />
         ))}
+
+        
       </div>
     </div>
   )
