@@ -46,11 +46,30 @@ npm create vite@latest
 
 - Skip the PROXY step and just install [Express CORS Simple Usage (Enable All CORS Requests)](https://expressjs.com/en/resources/middleware/cors.html) for our backend folder. This should fix the issue for **development** and **production** (assuming *every* request points the direct endpoint).
 
-- 
+- []  [Tutorial #10 New Workout Form](https://www.youtube.com/watch?v=tRmeik-IpUQ&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=10)
 
-- []  [Tutorial #10]()
+```jsx
+// WorkoutForm.jsx
+
+import React from 'react'
+
+const WorkoutForm = () => {
+  // Create state for each of the properties of the new workout.
+  // E.G. title, load, reps, 
+
+  return (
+    <>
+    
+    </>
+  )
+}
+
+export default WorkoutForm
+```
 
 - []  [Tutorial #11]()
+
+
 
 - []  [Tutorial #12]()
 
