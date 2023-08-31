@@ -1,9 +1,10 @@
 // WorkoutForm.jsx
 import { useState } from 'react'
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 const WorkoutForm = () => {
-  // Create state for each of the properties of the new workout.
-  // E.G. title, reps, load
+  
+  const {dispatch} = useWorkoutsContext()
 
   const [title, setTitle] = useState('') 
   const [reps, setReps] = useState('') 
@@ -39,6 +40,7 @@ const WorkoutForm = () => {
       setTitle('')
       setLoad('')
       setReps('')
+      dispatch( {type: 'CREATE_WORKOUT', payload: json} )
     }
 
   }
