@@ -11,6 +11,8 @@ const WorkoutForm = () => {
   const [load, setLoad] = useState('')
   const [error, setError] = useState(null)
 
+  const [emptyFields, setEmptyFields] = useState([])
+
   const handleSubmit = async (evt) => {
     evt.preventDefault()
 
@@ -31,6 +33,7 @@ const WorkoutForm = () => {
 
     if (!response.ok) {
       setError(json.error)
+      setEmptyFields(json.emptyFields)
     }
 
     if (response.ok) {
@@ -40,6 +43,7 @@ const WorkoutForm = () => {
       setTitle('')
       setLoad('')
       setReps('')
+      setEmptyFields([])
       dispatch( {type: 'CREATE_WORKOUT', payload: json} )
     }
 
@@ -55,6 +59,7 @@ const WorkoutForm = () => {
         onChange={ (evt) => setTitle(evt.target.value)}
         // Two-way binding approach
         value={title}
+        className={emptyFields.includes('title') ? 'error' : ''}
       />
       <label>Exercise Reps</label>
       <input
@@ -63,6 +68,7 @@ const WorkoutForm = () => {
         onChange={ (evt) => setReps(evt.target.value)}
         // Two-way binding approach
         value={reps}
+        className={emptyFields.includes('reps') ? 'error' : ''}
       />
       <label>Exercise Load</label>
       <input
@@ -71,6 +77,7 @@ const WorkoutForm = () => {
         onChange={ (evt) => setLoad(evt.target.value)}
         // Two-way binding approach
         value={load}
+        className={emptyFields.includes('load') ? 'error' : ''}
       />
 
       <button>Add Workout</button>
